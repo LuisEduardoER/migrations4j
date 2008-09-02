@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!--
-    Document   : 001_Create_User_Table.xml
-    Created on : September 1, 2008, 3:24 PM
-    Author     : russ
-    Description:
-        Purpose of the document follows.
--->
-
-<arg>
-
-</arg>
+<migration>
+    <up>
+        <create_table name="users">
+            <column name="id" type="long" default="auto"/>
+            <column name="username" type="string" allownull="false"/>
+            <column name="password" type="string" allownull="false"/>
+            <column name="realname" type="string" allownull="false"/>
+        </create_table>
+    </up>
+    <down>
+        <drop_table name="users"/>
+    </down>
+</migration>
