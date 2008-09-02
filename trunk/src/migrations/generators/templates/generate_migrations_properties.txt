@@ -17,15 +17,15 @@ jdbc.password=
 #####################################
 # Generated File Output Directories #
 #####################################
-output.dir.model=
-output.dir.mapping=
-output.dir.sql=
+output.dir.model={model_path}
+output.dir.mapping={mapping_path}
+output.dir.sql={sql_path}
 
 #####################################
 # Model Class Generation Properties #
 #####################################
-model.package=
-model.use.subclasses=
+model.package=com.{project_name}
+model.use.subclasses=true
 
 ####################
 # Other Properties #
