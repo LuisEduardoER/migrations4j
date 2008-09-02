@@ -1,0 +1,33 @@
+#########################################################
+# Adapter Config                                        #
+# Database Adapters: postgres, mysql, sqlserver, oracle #
+# Framework Adapaters: hibernate, torque                #
+#########################################################
+adapter.database=postgres
+adapter.framework=hibernate
+
+##############################
+# JDBC Connection Properties #
+##############################
+jdbc.driver=
+jdbc.url=
+jdbc.username=
+jdbc.password=
+
+#####################################
+# Generated File Output Directories #
+#####################################
+output.dir.model=
+output.dir.mapping=
+output.dir.sql=
+
+#####################################
+# Model Class Generation Properties #
+#####################################
+model.package=
+model.use.subclasses=
+
+####################
+# Other Properties #
+####################
+verbose.output=true
