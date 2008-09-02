@@ -1,21 +1,46 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package migrations;
 
-/**
- *
- * @author russ
- */
+import migrations.generators.Generator;
+
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        try {
+            parseArguments(args);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void parseArguments(String[] args) throws Exception {
+        
+        if (args.length < 1)
+            printHelp();
+        
+        switch (args.length) {
+            case 1:
+                
+                    
+                break;
+            case 2:
+                
+                if (args[0].equalsIgnoreCase("generate-project"))
+                    Generator.generateMigrationsProject(args[1]);
+                    
+                break;
+            default:
+                printHelp();
+        }
+        
+        
+    }
+    
+    public static void printHelp() {
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("** USAGE INSTRUCTIONS: **");
+        
+        System.out.println(sb.toString());
     }
 
 }
