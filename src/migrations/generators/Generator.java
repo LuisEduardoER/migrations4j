@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileFilter;
 import java.util.Arrays;
 import migrations.utils.PathUtils;
+import org.apache.commons.configuration.Configuration;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.comparator.NameFileComparator;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
@@ -42,10 +43,7 @@ public class Generator {
     
     public static void generateMigration(String name) throws Exception {
         File projectDirectory = new File(System.getProperty("user.dir"));
-        File migrationsProps = new File(projectDirectory.getPath() + File.separator + "migrations.properties");
-        
-        if (!migrationsProps.exists())
-            throw new Exception("ERROR: migrations.properties not found in current directory.");
+        Configuration migrationsProps = PathUtils.getMigrationProperties();
         
         // Copy template
         File migrationXMLTemplate = new File(templatesDirectory.getPath() + File.separator + "generate_migration_xml.txt");

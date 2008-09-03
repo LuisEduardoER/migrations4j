@@ -21,13 +21,13 @@ public class Main {
                     Migrator.migrate("latest");
                 
                 else if (args[0].equalsIgnoreCase("generate-sql-scripts"))
-                    System.out.println("Not yet implimneted!");
+                    System.out.println("Not yet implimented!");
                     
                 else if (args[0].equalsIgnoreCase("generate-model-classes"))
-                    System.out.println("Not yet implimneted!");
+                    System.out.println("Not yet implimented!");
                     
                 else if (args[0].equalsIgnoreCase("generate-mapping-files"))    
-                    System.out.println("Not yet implimneted!");
+                    System.out.println("Not yet implimented!");
                     
                 break;
             case 2:
