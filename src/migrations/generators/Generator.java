@@ -6,6 +6,8 @@ import org.apache.commons.io.FileUtils;
 
 public class Generator {
     
+    public static File templatesDirectory = new File(Generator.class.getResource("templates").getFile());
+    
     public static void generateProject(String name) throws Exception{
         // Create project directory based on name passed in
         File projectDirectory = new File(System.getProperty("user.dir") + File.separator + name);
@@ -20,7 +22,7 @@ public class Generator {
         mappingDirectory.mkdir();
 
         // Create migrations.properties file based on copy in templates directory.
-        File templatesDirectory = new File(Generator.class.getResource("templates").getFile());
+        
         File migrationsPropertiesTemplate = new File(templatesDirectory.getPath() + File.separator + "generate_migrations_properties.txt");
         String migrationsPropsIn = FileUtils.readFileToString(migrationsPropertiesTemplate);
         
@@ -35,7 +37,23 @@ public class Generator {
         FileUtils.writeStringToFile(migrationsPropsOut, migrationsPropsIn);
     }
     
-    public static void generateMigration(String name) {
+    public static void generateMigration(String name) throws Exception {
+        File projectDirectory = new File(System.getProperty("user.dir"));
+        File migrationsProps = new File(projectDirectory.getPath() + File.separator + "migrations.properties");
         
+        if (!migrationsProps.exists())
+            throw new Exception("ERROR: migrations.properties not found in current directory.");
+        
+        File migrationXMLTemplate = new File(templatesDirectory.getPath() + File.separator + "generate_migration_xml.txt");
+        String migrationXMLTemplateIn = FileUtils.readFileToString(migrationXMLTemplate);
+        
+        // Write new migrations.properties file
+        File migrationXMLTemplateOut = new File(projectDirectory.getPath() + File.separator + "migrations.properties");
+        //FileUtils.writeStringToFile(migrationsPropsOut, migrationsPropsIn);
+        
+    }
+    
+    public static String getNextMigrationPrefix(File projectDirectory) {
+        return "";
     }
 }

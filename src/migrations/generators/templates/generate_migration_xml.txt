@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <migration>
     <up>
-        <create_table name="myTable">
-            <column name="id" type="long" default="auto"/>
-            <column name="label" type="string" allownull="false"/>
-        </create_table>
+        <!-- TODO: Migration code here -->
     </up>
     <down>
-        <drop_table name="myTable"/>
+        <!-- TODO: Migration code here -->
     </down>
 </migration>
