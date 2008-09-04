@@ -3,6 +3,7 @@ package migrations.generators;
 import java.io.File;
 import java.io.FileFilter;
 import java.util.Arrays;
+import migrations.utils.AdapterUtils;
 import migrations.utils.PathUtils;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.io.FileUtils;
@@ -54,8 +55,7 @@ public class Generator {
         
         // Write new migration file
         File migrationXMLTemplateOut = new File(projectDirectory.getPath() + File.separator + filename);
-        FileUtils.writeStringToFile(migrationXMLTemplateOut, migrationXMLTemplateIn);
-        
+        FileUtils.writeStringToFile(migrationXMLTemplateOut, migrationXMLTemplateIn);        
     }
     
     public static String getNextMigrationPrefix(File dir) throws Exception {
