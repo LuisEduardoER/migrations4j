@@ -1,13 +1,8 @@
 package com.migrations.adapters;
 
-import java.sql.Connection;
 import migrations.adapters.SQLAdapter;
 
 public class sqlserver_SQLAdapter extends SQLAdapter {
-    public sqlserver_SQLAdapter() {
-        //super(conn);
-    }
-    
     public void createTable(String tableName, String options) {}
     public void dropTable(String tableName) {}
     public void renameTable(String oldTableName, String newTableName) {}
